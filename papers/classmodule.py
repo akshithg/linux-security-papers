@@ -174,10 +174,10 @@ NOTE: Do **NOT** edit this file manually.
 """
 
         readme_table = """
-year | venue | title | authors | doi | url | dblp
------|-------|-------|---------|-----|-----|-----"""
+year | venue | title | authors | links
+-----|-------|-------|---------|------"""
 
-        table_row = '{} | {} | {} | {} | {} | {} | {}'
+        table_row = '{} | {} | {} | {} | [paper]({}) [dblp]({})'
 
 
         with open(readme, 'w') as r:
@@ -189,7 +189,6 @@ year | venue | title | authors | doi | url | dblp
                     p.venue,
                     p.title,
                     p.authors,
-                    p.doi,
                     p.url,
                     p.dblp,
                 ), file=r)
