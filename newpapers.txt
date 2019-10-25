@@ -1,0 +1,56 @@
+Space Traveling across VM: Automatically Bridging the Semantic Gap in Virtual Machine Introspection via Online Kernel Data Redirection
+Smashing the Gadgets: Hindering Return-Oriented Programming Using In-Place Code Randomization
+Missing the Point(er): On the Effectiveness of Code Pointer Integrity
+KCoFI: Complete Control-Flow Integrity for Commodity Operating System Kernels
+Dancing with Giants: Wimpy Kernels for On-demand Isolated I/O
+Practical Control Flow Integrity & Randomization for Binary Executables
+SoK: Eternal War in Memory
+ASLR-Guard: Stopping Address Space Leakage for Code Reuse Attacks
+Timely Rerandomization for Mitigating Memory Disclosures
+CCFI: Cryptographically Enforced Control Flow Integrity
+Practical Context-Sensitive CFI
+Losing Control: On the Effectiveness of Control-Flow Integrity under Stack Attacks
+Control Jujutsu: On the Weaknesses of Fine-Grained Control Flow Integrity
+Per-Input Control-Flow Integrity
+A Tale of Two Kernels: Towards Ending Kernel Hardening Wars with Split Kernel
+Hypervision Across Worlds: Real-time Kernel Protection from the ARM TrustZone Secure World
+You Can Run but You Can't Read: Preventing Disclosure Exploits in Executable Code
+DieHarder: Securing the Heap
+Countering kernel rootkits with lightweight hook protection
+Secure In-VM Monitoring Using Hardware Virtualization
+Return-Oriented Programming without Returns
+Breaking Kernel Address Space Layout Randomization with Intel TSX
+Prefetch Side-Channel Attacks: Bypassing SMAP and Kernel ASLR
+Baggy Bounds Checking: An Efficient and Backwards-Compatible Defense against Out-of-Bounds Errors
+Cling: A Memory Allocator to Mitigate Dangling Pointers
+kGuard: Lightweight Kernel Protection against Return-to-User Attacks
+Enhanced Operating System Security Through Efficient and Fine-grained Address Space Randomization
+Poking Holes in Information Hiding
+What Cannot Be Read, Cannot Be Leveraged? Revisiting Assumptions of JIT-ROP Defenses
+Trustworthy Whole-System Provenance for the Linux Kernel
+Automatic Generation of Data-Oriented Exploits
+Control-Flow Bending: On the Effectiveness of Control-Flow Integrity
+How the ELF Ruined Christmas
+ROP is Still Dangerous: Breaking Modern Defenses
+Stitching the Gadgets: On the Ineffectiveness of Coarse-Grained Control-Flow Integrity Protection
+Size Does Matter: Why Using Gadget-Chain Length to Prevent Code-Reuse Attacks is Hard
+Oxymoron: Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing
+Dynamic Hooks: Hiding Control Flow Changes within Non-Control Data
+ret2dir: Rethinking Kernel Isolation
+Enforcing Forward-Edge Control-Flow Integrity in GCC & LLVM
+Dowsing for Overflows: A Guided Fuzzer to Find Buffer Boundary Violations
+Control Flow Integrity for COTS Binaries
+Transparent ROP Exploit Mitigation Using Indirect Branch Tracing
+Seeing Through The Same Lens: Introspecting Guest Address Space At Native Speed
+Oscar: A Practical Page-Permissions-Based Scheme for Thwarting Dangling Pointers
+Towards Efficient Heap Overflow Discovery
+Efficient Protection of Path-Sensitive Control Security
+Thwarting Memory Disclosure with Efficient Hypervisor-enforced Intra-domain Isolation
+Security by Any Other Name: On the Effectiveness of Provider Based Email Security
+DeTrust: Defeating Hardware Trust Verification with Stealthy Implicitly-Triggered Hardware Trojans
+The Last Mile: An Empirical Study of Timing Channels on seL4
+ASIST: architectural support for instruction set randomization
+PIkit: A New Kernel-Independent Processor-Interconnect Rootkit
+Tracking Rootkit Footprints with a Practical Memory Analysis System
+Capsicum: practical capabilities for UNIX
+Q: Exploit Hardening Made Easy
