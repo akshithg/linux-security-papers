@@ -8,8 +8,8 @@ readme = './readme.md'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-e', '--exists', help='check if a paper is already included')
-parser.add_argument('-p', '--print', action='store_true',
-                    help='print all papers')
+parser.add_argument('-l', '--list', action='store_true',
+                    help='list all papers')
 parser.add_argument('-r', '--readme', action='store_true',
                     help='update the readme')
 parser.add_argument('-u', '--update', action='store_true',
@@ -26,8 +26,8 @@ def main():
     if args.exists:
         print(papers.paper_exists(args.exists))
 
-    if args.print:
-        papers.print_papers()
+    if args.list:
+        papers.list_papers()
 
     if args.update:
         papers.update_papers(new_papers, args.y)

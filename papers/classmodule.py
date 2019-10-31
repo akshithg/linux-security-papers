@@ -69,18 +69,20 @@ class dblp():
         try:
             assert response.ok
         except AssertionError as e:
+            print(e)
             print("###\n{}\n{}\n".format(response.request.url, response.json()))
 
         hits = response.json()['result']['hits']
         for hit in hits['hit']:
-            yield paper(hit['info'])
+            if type == paper:
+                yield paper(hit['info'])
 
     def get_publ(self, title):
         """
         search publications: title
         """
         params = self.make_params({
-            'q': title
+            'q': title,
         })
         return self.search('publ', params)
 
@@ -89,7 +91,7 @@ class dblp():
         search author: author name
         """
         params = self.make_params({
-            'q': name
+            'q': name,
         })
         return self.search('author', params)
 
@@ -98,7 +100,8 @@ class dblp():
         search venue
         """
         params = self.make_params({
-            'q': venue
+            'q': venue,
+            'h': 50,
         })
         return self.search('venue', params)
 
@@ -112,7 +115,7 @@ class Papers():
         for index, row in self._papers.iterrows():
             yield paper(row.to_dict())
 
-    def print_papers(self):
+    def list_papers(self):
         for paper in self.papers():
             print(paper)
 
@@ -162,7 +165,11 @@ class Papers():
             print('Saved')
 
     def write_to_readme(self, readme):
-        self._papers.sort_values(['year', 'venue'], ascending=[True, True], inplace=True)
+        self._papers.sort_values(
+            ['year', 'venue'],
+            ascending=[True, True],
+            inplace=True
+        )
 
         readme_header = """
 # Linux Security Papers
@@ -178,7 +185,6 @@ year | venue | title | authors | links
 -----|-------|-------|---------|------"""
 
         table_row = '{} | {} | {} | {} | [paper]({}) [dblp]({})'
-
 
         with open(readme, 'w') as r:
             print(readme_header, file=r)
