@@ -1,56 +1,101 @@
-Space Traveling across VM: Automatically Bridging the Semantic Gap in Virtual Machine Introspection via Online Kernel Data Redirection
-Smashing the Gadgets: Hindering Return-Oriented Programming Using In-Place Code Randomization
-Missing the Point(er): On the Effectiveness of Code Pointer Integrity
-KCoFI: Complete Control-Flow Integrity for Commodity Operating System Kernels
-Dancing with Giants: Wimpy Kernels for On-demand Isolated I/O
-Practical Control Flow Integrity & Randomization for Binary Executables
+# Kernel Software Security
+
+## sp
+Usable Mandatory Integrity Protection for Operating Systems
+Lurking in the Shadows: Identifying Systemic Threats to Kernel Data
+Practical Proactive Integrity Preservation: A Basis for Malware Defense
+Verifying the Safety of User Pointer Dereferences
+Smashing the Gadgets: Hindering Return-Oriented Programming Using In-place Code Randomization
 SoK: Eternal War in Memory
-ASLR-Guard: Stopping Address Space Leakage for Code Reuse Attacks
-Timely Rerandomization for Mitigating Memory Disclosures
-CCFI: Cryptographically Enforced Control Flow Integrity
-Practical Context-Sensitive CFI
-Losing Control: On the Effectiveness of Control-Flow Integrity under Stack Attacks
-Control Jujutsu: On the Weaknesses of Fine-Grained Control Flow Integrity
-Per-Input Control-Flow Integrity
-A Tale of Two Kernels: Towards Ending Kernel Hardening Wars with Split Kernel
-Hypervision Across Worlds: Real-time Kernel Protection from the ARM TrustZone Secure World
-You Can Run but You Can't Read: Preventing Disclosure Exploits in Executable Code
-DieHarder: Securing the Heap
-Countering kernel rootkits with lightweight hook protection
-Secure In-VM Monitoring Using Hardware Virtualization
-Return-Oriented Programming without Returns
-Breaking Kernel Address Space Layout Randomization with Intel TSX
-Prefetch Side-Channel Attacks: Bypassing SMAP and Kernel ASLR
-Baggy Bounds Checking: An Efficient and Backwards-Compatible Defense against Out-of-Bounds Errors
-Cling: A Memory Allocator to Mitigate Dangling Pointers
-kGuard: Lightweight Kernel Protection against Return-to-User Attacks
-Enhanced Operating System Security Through Efficient and Fine-grained Address Space Randomization
-Poking Holes in Information Hiding
-What Cannot Be Read, Cannot Be Leveraged? Revisiting Assumptions of JIT-ROP Defenses
-Trustworthy Whole-System Provenance for the Linux Kernel
-Automatic Generation of Data-Oriented Exploits
-Control-Flow Bending: On the Effectiveness of Control-Flow Integrity
-How the ELF Ruined Christmas
-ROP is Still Dangerous: Breaking Modern Defenses
-Stitching the Gadgets: On the Ineffectiveness of Coarse-Grained Control-Flow Integrity Protection
-Size Does Matter: Why Using Gadget-Chain Length to Prevent Code-Reuse Attacks is Hard
-Oxymoron: Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing
-Dynamic Hooks: Hiding Control Flow Changes within Non-Control Data
-ret2dir: Rethinking Kernel Isolation
-Enforcing Forward-Edge Control-Flow Integrity in GCC & LLVM
-Dowsing for Overflows: A Guided Fuzzer to Find Buffer Boundary Violations
-Control Flow Integrity for COTS Binaries
-Transparent ROP Exploit Mitigation Using Indirect Branch Tracing
-Seeing Through The Same Lens: Introspecting Guest Address Space At Native Speed
-Oscar: A Practical Page-Permissions-Based Scheme for Thwarting Dangling Pointers
-Towards Efficient Heap Overflow Discovery
-Efficient Protection of Path-Sensitive Control Security
-Thwarting Memory Disclosure with Efficient Hypervisor-enforced Intra-domain Isolation
-Security by Any Other Name: On the Effectiveness of Provider Based Email Security
-DeTrust: Defeating Hardware Trust Verification with Stealthy Implicitly-Triggered Hardware Trojans
-The Last Mile: An Empirical Study of Timing Channels on seL4
-ASIST: architectural support for instruction set randomization
-PIkit: A New Kernel-Independent Processor-Interconnect Rootkit
-Tracking Rootkit Footprints with a Practical Memory Analysis System
-Capsicum: practical capabilities for UNIX
-Q: Exploit Hardening Made Easy
+Practical Timing Side Channel Attacks against Kernel Space ASLR
+KCoFI: Complete Control-Flow Integrity for Commodity Operating System Kernels
+Dancing with Giants: Wimpy Kernels for On-Demand Isolated I/O
+NORAX: Enabling Execute-Only Memory for COTS Binaries on AArch64
+LBM: A Security Framework for Peripherals within the Linux Kernel
+SoK: Shining Light on Shadow Stacks
+SoK: Sanitizing for Security
+Precise and Scalable Detection of Double-Fetch Bugs in OS Kernels
+
+## ndss
+User-Level Infrastructure for System Call Interposition: A Platform for Intrusion Detection and Confinement
+Traps and Pitfalls: Practical Problems in System Call Interposition Based Security Tools.
+Model Checking One Million Lines of C Code.
+Ostia: A Delegating Architecture for Secure System Call Interposition.
+A Black-Box Tracing Technique to Identify Causes of Least-Privilege Incompatibilities
+K-Tracer: A System for Extracting Kernel Malware Behavior.
+Analyzing and Comparing the Protection Quality of Security Enhanced Operating Systems.
+IntScope: Automatically Detecting Integer Overflow Vulnerability in X86 Binary Using Symbolic Execution.
+Practical Protection of Kernel Integrity for Commodity OS from Untrusted Extensions.
+Efficient Monitoring of Untrusted Kernel-Mode Execution.
+SigGraph: Brute Force Scanning of Kernel Data Structure Instances Using Graph-based Signatures.
+Kruiser: Semi-synchronized Non-blocking Concurrent Kernel Heap Buffer Overflow Monitoring.
+Attack Surface Metrics and Automated Compile-Time OS Kernel Tailoring.
+ROPecker: A Generic and Practical Approach For Defending Against ROP Attacks.
+Preventing Use-after-free with Dangling Pointers Nullification.
+Enforcing Kernel Security Invariants with Data Flow Integrity
+PT-Rand: Practical Mitigation of Data-only Attacks against Page Tables.
+Unleashing Use-Before-Initialization Vulnerabilities in the Linux Kernel Using Targeted Stack Spraying.
+K-Miner: Uncovering Memory Corruption in Linux
+
+## osdi
+Recovering Device Drivers
+XFI: Software Guards for System Address Spaces
+Improving Integer Security for Systems with KINT
+Jitk: A Trustworthy In-Kernel Interpreter Infrastructure
+Light-Weight Contexts: An OS Abstraction for Safety and Performance
+EbbRT: A Framework for Building Per-Application Library Operating Systems
+
+## usenix
+Safety Checking of Kernel Extensions
+Trusted Path Execution for the Linux 2.6 Kernel as a Linux Security Module
+Linux Kernel Developer Responses to Static Analysis Bug Reports.
+Tolerating Malicious Device Drivers in Linux
+Static Analysis of Variability in System Software: The 90, 000 #ifdefs Issue.
+Lock-in-Pop: Securing Privileged Operating System Kernels by Keeping on the Beaten Path
+Effective Static Analysis of Concurrency Use-After-Free Bugs in Linux Device Drivers.
+LXDs: Towards Isolation of Kernel Subsystems.
+
+## ccs
+Operating system enhancements to prevent the misuse of system calls.
+On the effectiveness of address-space randomization.
+Automated detection of persistent kernel control-flow attacks.
+Mapping kernel objects to enable systematic integrity checking.
+Robust signatures for kernel data structures.
+A Tale of Two Kernels: Towards Ending Kernel Hardening Wars with Split Kernel.
+Prefetch Side-Channel Attacks: Bypassing SMAP and Kernel ASLR.
+Breaking Kernel Address Space Layout Randomization with Intel TSX.
+FreeGuard: A Faster Secure Heap Allocator
+
+## sosp
+Information flow control for standard OS abstractions.
+
+## eurosys
+Thorough static analysis of device drivers
+Sealing OS processes to improve dependability and safety
+Manageable fine-grained information flow
+Multi-aspect profiling of kernel rootkit behavior
+Defeating return-oriented rootkits with "Return-Less" kernels.
+Process firewalls: protecting processes during resource access.
+DangSan: Scalable Use-after-free Detection.
+A Characterization of State Spill in Modern Operating Systems.
+kR^X: Comprehensive Kernel Protection against Just-In-Time Code Reuse.
+
+## grsecurity
+
+#SELinux and grsecurity: A Case Study Comparing Linux Security Kernel Enhancements
+Real-World Buffer Overflow Protection for Userspace & Kernelspace
+Return-Oriented Rootkits:Bypassing Kernel Code Integrity Protection Mechanisms
+Securing The Kernel via Static Binary Rewriting and Program Shepherding
+A Robust Kernel-Based Solution to Control-Hijacking Buffer Overflow Attacks
+
+## other
+
+#kBouncer:  Efficient and Transparent ROP Mitigation
+#DROP THE ROP Fine-grained Control-flow integrity for the Linux Kernel (kCFI
+#PaX: The Guaranteed End of Arbitrary Code Execution
+UniSan: Proactive Kernel Memory Initialization to Eliminate Data Leakages
+PrivGuard: Protecting Sensitive Kernel Data From Privilege Escalation Attacks
+Enhanced operating system security through efficient and fine-grained address space randomization
+Enforcing kernel security invariants with data flow integrity
+Mapping kernel objects to enable systematic integrity checking
+Finding User/Kernel Pointer Bugs with Type Inference

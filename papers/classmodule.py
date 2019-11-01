@@ -3,16 +3,29 @@ import pandas as pd
 from fuzzywuzzy import fuzz
 
 
-class paper():
+class Paper():
     def __init__(self, info):
-        self.authors = ', '.join(info['authors']['author']) if \
-            type(info['authors']) is dict else info['authors']
-        self.doi = info.get('doi', '')
-        self.title = info['title']
-        self.venue = info['venue']
-        self.year = info['year']
-        self.dblp = info['dblp'] if 'dblp' in info.keys() else info['url']
-        self.url = info['url'] if 'dblp' in info.keys() else info['ee']
+        try:
+            if type(info['authors']) is dict:
+                self.authors = ', '.join(info['authors']['author']) \
+                    if type(info['authors']['author']) is list \
+                    else info['authors']['author']
+            else:
+                self.authors = info['authors']
+
+            self.doi = info.get('doi', '')
+            self.title = info['title']
+            self.year = info['year']
+            if 'dblp' in info.keys():
+                self.dblp = info['dblp']
+                self.url = info['url']
+            else:
+                self.dblp = info['url']
+                self.url = info['ee']
+            self.id = str(self.dblp).split('/')[-1]
+            self.venue = str(self.dblp).split('/')[-2]
+        except Exception as e:
+            print(info)
 
     def __repr__(self):
         x = "\n   title: {}\
@@ -74,8 +87,10 @@ class dblp():
 
         hits = response.json()['result']['hits']
         for hit in hits['hit']:
-            if type == paper:
-                yield paper(hit['info'])
+            if type == 'publ':
+                yield Paper(hit['info'])
+            else:
+                yield None
 
     def get_publ(self, title):
         """
@@ -113,7 +128,7 @@ class Papers():
 
     def papers(self):
         for index, row in self._papers.iterrows():
-            yield paper(row.to_dict())
+            yield Paper(row.to_dict())
 
     def list_papers(self):
         for paper in self.papers():
@@ -133,13 +148,18 @@ class Papers():
             db = dblp()
 
             for i in papers:
-                print("\nChecking: {}".format(i.strip()))
+                i = i.strip()
+                if (i == '' or i[0] == '#'):
+                    continue
+
+                print("\nChecking: {}".format(i))
                 if self.paper_exists(i):
                     print("Already present")
                     continue
                 else:
                     print("Searching...")
-                    search_results = db.get_publ(i.strip())
+                    search_results = db.get_publ(i)
+                    assert search_results is not None
 
                     for result in search_results:
                         print(result)
@@ -148,10 +168,11 @@ class Papers():
                             if 'y' not in update.lower():
                                 continue
 
-                        # year	venue	title	authors	doi	url
-                        csv_row = '{}\t{}\t{}\t{}\t{}\t{}\t{}'
+                        # year	venue	id	title	authors	doi	url
+                        csv_row = '{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}'
                         print(csv_row.format(
                             result.year,
+                            result.id,
                             result.venue,
                             result.title,
                             result.authors,
@@ -166,7 +187,7 @@ class Papers():
 
     def write_to_readme(self, readme):
         self._papers.sort_values(
-            ['year', 'venue'],
+            ['venue', 'year'],
             ascending=[True, True],
             inplace=True
         )
@@ -184,7 +205,7 @@ NOTE: Do **NOT** edit this file manually.
 year | venue | title | authors | links
 -----|-------|-------|---------|------"""
 
-        table_row = '{} | {} | {} | {} | [paper]({}) [dblp]({})'
+        table_row = '{} | {} | {} | {} | [paper]({}) [{}]({})'
 
         with open(readme, 'w') as r:
             print(readme_header, file=r)
@@ -196,5 +217,6 @@ year | venue | title | authors | links
                     p.title,
                     p.authors,
                     p.url,
+                    p.id,
                     p.dblp,
                 ), file=r)

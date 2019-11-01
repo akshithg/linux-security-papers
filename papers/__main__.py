@@ -1,5 +1,6 @@
 import argparse
 from .classmodule import Papers
+from .funcmodule import notability_export
 
 
 new_papers = './newpapers.txt'
@@ -7,7 +8,8 @@ papers_csv = './data/papers.csv'
 readme = './readme.md'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-e', '--exists', help='check if a paper is already included')
+parser.add_argument('-e', '--exists',
+                    help='check if a paper is already included')
 parser.add_argument('-l', '--list', action='store_true',
                     help='list all papers')
 parser.add_argument('-r', '--readme', action='store_true',
@@ -16,6 +18,8 @@ parser.add_argument('-u', '--update', action='store_true',
                     help='update list of papers')
 parser.add_argument('-y', action='store_true',
                     help='doesnt ask for confirmation while updating')
+parser.add_argument('--notability', action='store_true',
+                    help='exports all pdfs for natability import')
 args = parser.parse_args()
 
 
@@ -35,6 +39,8 @@ def main():
     if args.readme:
         papers.write_to_readme(readme)
 
+    if args.notability:
+        rename_pdf()
 
 if __name__ == '__main__':
     main()
