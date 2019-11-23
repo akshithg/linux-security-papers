@@ -187,7 +187,7 @@ class Papers():
 
     def write_to_readme(self, readme):
         self._papers.sort_values(
-            ['venue', 'year'],
+            ['year', 'venue'],
             ascending=[True, True],
             inplace=True
         )
@@ -202,16 +202,18 @@ NOTE: Do **NOT** edit this file manually.
 """
 
         readme_table = """
-year | venue | title | authors | links
------|-------|-------|---------|------"""
+&#35; | year | venue | title | authors | links
+------|-----|-------|-------|---------|------"""
 
-        table_row = '{} | {} | {} | {} | [paper]({}) [{}]({})'
+        table_row = '{} | {} | {} | {} | {} | [paper]({}) [{}]({})'
 
         with open(readme, 'w') as r:
+            i = 1
             print(readme_header, file=r)
             print(readme_table, file=r)
             for p in self.papers():
                 print(table_row.format(
+                    i,
                     p.year,
                     p.venue,
                     p.title,
@@ -220,3 +222,5 @@ year | venue | title | authors | links
                     p.id,
                     p.dblp,
                 ), file=r)
+
+                i += 1
